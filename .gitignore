@@ -1,0 +1,11 @@
+npm-debug.log
+yarn-error.log
+/.phpunit.cache
+/vendor/
+/auth.json
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.DS_Store
