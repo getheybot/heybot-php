@@ -9,20 +9,12 @@ use Heybot\HeybotObject;
 class Template extends Resource
 {
     /**
-     * List approved message templates.
+     * Send message template.
      *
      * @param  array{limit?: int, after?: string, status?: string}  $params
      */
-    public function list(array $params = []): HeybotObject
+    public function send(array $params = []): HeybotObject
     {
-        return $this->get('/template', $params);
-    }
-
-    /**
-     * Retrieve a single template by ID.
-     */
-    public function retrieve(string $id): HeybotObject
-    {
-        return $this->get("/template/{$id}");
+        return $this->post('/template', $params);
     }
 }

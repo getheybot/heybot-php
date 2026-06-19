@@ -30,22 +30,4 @@ class Message extends Resource
     {
         return $this->post('/message', $params);
     }
-
-    /**
-     * Retrieve a previously sent message by its ID.
-     */
-    public function retrieve(string $id): HeybotObject
-    {
-        return $this->get("/message/{$id}");
-    }
-
-    /**
-     * List messages, optionally filtered by query parameters.
-     *
-     * @param  array{limit?: int, after?: string, before?: string}  $params
-     */
-    public function list(array $params = []): HeybotObject
-    {
-        return $this->get('/message', $params);
-    }
 }
