@@ -32,14 +32,4 @@ abstract class Resource
             $this->client->post($path, $payload)
         );
     }
-
-    /**
-     * Perform a DELETE request and return a HeybotObject.
-     */
-    protected function delete(string $path): HeybotObject
-    {
-        return HeybotObject::fromArray(
-            $this->client->delete($path)
-        );
-    }
 }
