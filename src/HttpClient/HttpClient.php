@@ -65,7 +65,8 @@ class HttpClient
         try {
             $response = $this->client->request($method, $this->baseUrl.$path, $options);
             $statusCode = $response->getStatusCode();
-            $decoded = $response->toArray(throw: false);
+            $content = $response->getContent(throw: false);
+            $decoded = $content === '' ? [] : (json_decode($content, true) ?? []);
         } catch (\Throwable $e) {
             throw new ApiException($e->getMessage());
         }
