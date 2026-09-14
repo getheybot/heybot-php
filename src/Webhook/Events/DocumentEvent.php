@@ -18,9 +18,10 @@ class DocumentEvent extends IncomingEvent
         Recipient $to,
         public readonly string $mimeType,
         public readonly string $sha256,
-        public readonly string $url,
+        public readonly ?string $url,
         public readonly string $filename,
         public readonly ?string $caption,
+        public readonly ?string $mediaId = null,
     ) {
         parent::__construct($id, $timestamp, $channel, $event, 'document', $from, $to);
     }

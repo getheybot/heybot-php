@@ -18,8 +18,9 @@ class StickerEvent extends IncomingEvent
         Recipient $to,
         public readonly string $mimeType,
         public readonly string $sha256,
-        public readonly string $url,
+        public readonly ?string $url,
         public readonly bool $animated,
+        public readonly ?string $mediaId = null,
     ) {
         parent::__construct($id, $timestamp, $channel, $event, 'sticker', $from, $to);
     }

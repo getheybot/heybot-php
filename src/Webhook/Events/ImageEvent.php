@@ -19,9 +19,10 @@ class ImageEvent extends IncomingEvent
         Recipient $to,
         public readonly string $mimeType,
         public readonly string $sha256,
-        public readonly string $url,
+        public readonly ?string $url,
         public readonly ?string $caption,
         public readonly ?ForwardContext $context,
+        public readonly ?string $mediaId = null,
     ) {
         parent::__construct($id, $timestamp, $channel, $event, 'image', $from, $to);
     }
