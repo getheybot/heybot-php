@@ -19,7 +19,7 @@ use Heybot\Resources\Template;
  */
 class Client
 {
-    private const API_BASE = 'https://whatsapp.heybot.cloud/api/v2';
+    private const API_BASE = 'https://api.heybot.cloud/v1/whatsapp';
 
     private HttpClient $httpClient;
 
