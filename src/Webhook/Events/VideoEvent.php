@@ -19,8 +19,9 @@ class VideoEvent extends IncomingEvent
         Recipient $to,
         public readonly string $mimeType,
         public readonly string $sha256,
-        public readonly string $url,
+        public readonly ?string $url,
         public readonly ?ForwardContext $context,
+        public readonly ?string $mediaId = null,
     ) {
         parent::__construct($id, $timestamp, $channel, $event, 'video', $from, $to);
     }

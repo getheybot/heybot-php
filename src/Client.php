@@ -26,7 +26,7 @@ class Client
     /** @var array<string, object> */
     private array $resourceCache = [];
 
-    private static array $resourceMap = [
+    private const array RESOURCE_MAP = [
         'message' => Message::class,
         'template' => Template::class,
     ];
@@ -55,11 +55,11 @@ class Client
      */
     public function __get(string $name): object
     {
-        if (! isset(self::$resourceMap[$name])) {
+        if (! isset(self::RESOURCE_MAP[$name])) {
             throw new \BadMethodCallException("Unknown resource: \"{$name}\".");
         }
 
-        return $this->resourceCache[$name] ??= new (self::$resourceMap[$name])($this->httpClient);
+        return $this->resourceCache[$name] ??= new (self::RESOURCE_MAP[$name])($this->httpClient);
     }
 
     public function getApiKey(): string
